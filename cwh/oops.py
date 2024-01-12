@@ -85,15 +85,44 @@
 
 # print(Math.add(49,59))
 
-class Employee:
-    def __init__(self,name):
-        self.name = name
-    def showDetails(self):
-        print(f"Name : {self.name} ")
+# class Employee:
+#     def __init__(self,name):
+#         self.name = name
+#     def showDetails(self):
+#         print(f"Name : {self.name} ")
         
-emp1 = Employee("Steve")
+# emp1 = Employee("Steve")
 
 # emp1.showDetails()
-Employee.showDetails(emp1)
+# Employee.showDetails(emp1)
 
+
+
+import re
+
+# raw = r"Hello\nWorld"
+# normalString = "Hello\nWorld"
+
+# print(raw,normalString)
+
+text = "Steve Smith is a RRockstar. Ahh ya mate he is a Rockstar"
+pattern = r"[A-Z]+ockstar"
+# match = re.search(pattern,text)
+# if match:
+#     print("We got it")   
+# else:
+#     print("Its not there mate")
+
+# matches = re.finditer(pattern,text)
+# for match in matches:
+#     print(match)
+
+# match = re.findall("is",text)
+# print(match)
+
+# match = re.split("\s",text,3)
+# print(match)
+
+match = re.sub("\s","-space-",text,2)
+print(match)
 
