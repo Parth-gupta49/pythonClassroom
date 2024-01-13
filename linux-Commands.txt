@@ -1,0 +1,18 @@
+1. ls => to list the all the files and folders
+2. cp => to copy one file and paste it to another file
+here how it works : cp hello.py goodbye.py 
+# this line of code basically means we are copying everything which is in hello.py and pasting it to goodbye.py
+
+3. mv => to change the name of any file or folders
+here how it works : mv hello.py bye.py
+# Interestingly we can also use mv command to move our files
+here how it works : mv farewell.py ..
+# this line of code instruct that move the file farewell.py to the parent folder 
+
+4. rm => to remove any files
+here how it works : rm copy1.txt
+
+5. rmdir => to remove any folders
+here how it works : rmdir folder 
+
+
