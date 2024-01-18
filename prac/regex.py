@@ -12,7 +12,7 @@ else:
     print("Its not there mate")
 
 
-# finditer function will take care of every pattern it finds and gives the span for every find. It can be used as alternative of search function as it only finds the find match 
+# finditer function will take care of every pattern it finds and gives the span for every find. It can be used as alternative of search function as it only finds the first match 
 matches = re.finditer(pattern,text)
 for match in matches:
     print(match)
