@@ -1,8 +1,8 @@
 
 
 import re
-text = "Steve Smith is a Rockstar. Yup!! he is a Rockstar"
-pattern = r"[A-Z]+ockstar"
+text = "Steve Smith is a Rockstar. Yup!! he is a RockSStar"
+pattern = r"Rock[A-Z]+tar"
 
 # match function 
 match = re.search(pattern,text)
@@ -29,3 +29,4 @@ print(match)
 # sub function 
 match = re.sub("\s","-space-",text,2)
 print(match)
+
