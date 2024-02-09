@@ -2,33 +2,34 @@ import tkinter as tk
 import re
 
 def test_regex():
-    user_input = entry_string.get()
-    regex_pattern = entry_regex.get()
+    user_input = inputForString.get()
+    regex_pattern = inputForRegex.get()
 
-    if re.match(regex_pattern, user_input):
-        result_label.config(text="Match!")
+    if re.search(regex_pattern, user_input):
+        labelForResult.config(text="Match!")
     else:
-        result_label.config(text="No match.")
+        labelForResult.config(text="No match.")
 
-root = tk.Tk()
-root.title("String Pattern Matching")
+rootWindow = tk.Tk()
+rootWindow.geometry("300x150")
+rootWindow.title("String Pattern Matching")
 
-label_string = tk.Label(root, text="Enter String:")
-label_string.grid(row=0, column=0)
+labelForString = tk.Label(rootWindow, text="Enter String:")
 
-entry_string = tk.Entry(root, width=30)
-entry_string.grid(row=0, column=1)
+inputForString = tk.Entry(rootWindow, width=20)
 
-label_regex = tk.Label(root, text="Enter Regular Expression:")
-label_regex.grid(row=1, column=0)
+labelForRegex = tk.Label(rootWindow, text="Enter Regular Expression:")
 
-entry_regex = tk.Entry(root, width=30)
-entry_regex.grid(row=1, column=1)
+inputForRegex = tk.Entry(rootWindow, width=20)
 
-test_button = tk.Button(root, text="Test Pattern", command=test_regex)
-test_button.grid(row=2, column=0, columnspan=20)
+button = tk.Button(rootWindow, text="Test Pattern", command=test_regex)
 
-result_label = tk.Label(root, text="")
-result_label.grid(row=3, column=0, columnspan=20)
+labelForResult = tk.Label(rootWindow, text="")
 
-root.mainloop()
+labelForString.pack()  
+inputForString.pack()
+labelForRegex.pack()
+inputForRegex.pack()
+button.pack()
+labelForResult.pack()
+rootWindow.mainloop()
