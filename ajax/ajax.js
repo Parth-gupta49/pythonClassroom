@@ -4,6 +4,8 @@ let loader = document.querySelector(".loader");
 
 let fetchBtn = document.getElementById("fetch-btn");
 
+let elementToBePopulated = document.createElement('p');
+
 // fetchBtn.addEventListener("click", buttonClickHandler);
 
 // function buttonClickHandler() {
@@ -55,28 +57,46 @@ let fetchBtn = document.getElementById("fetch-btn");
 //   xhr.send();
 // }
 
-
+let counter = 0
 
 fetchBtn.addEventListener('click',populateData)
 
 function populateData() {
-    let ourRequest = new XMLHttpRequest();
-    ourRequest.open('GET','https://learnwebcode.github.io/json-example/animals-1.json',true)
-
-    ourRequest.onload = function(){
-        let ourData = JSON.parse(ourRequest.responseText);
-        // let ourData = ourRequest.responseText;
-        // console.log(ourData);
-
-        renderHTML(ourData);
+    counter++;
+    if(counter<=3){
+        let ourRequest = new XMLHttpRequest();
+        ourRequest.open('GET',`https://learnwebcode.github.io/json-example/animals-${counter}.json`,true)
     
+        ourRequest.onload = function(){
+            let ourData = JSON.parse(ourRequest.responseText);
+            // let ourData = ourRequest.responseText;
+            // console.log(ourData);
+    
+            renderHTML(ourData);
+        
+        }
+        
+        ourRequest.send();
+    }
+    else{
+        fetchBtn.disabled = true;
     }
     
-    ourRequest.send();
 }
 
 
 function renderHTML(data) {
+
+    let htmlString = ""
+
+    for (let i = 0; i < data.length; i++) {
+        htmlString+="<p>" + data[i].name + "is a " + data[i].species + ".</p>"
+    }
+
+    elementToBePopulated.insertAdjacentHTML('beforeend',htmlString)
     
-    
+
+
+
+    document.body.appendChild(elementToBePopulated)
 }
