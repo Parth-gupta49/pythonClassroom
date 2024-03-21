@@ -6,6 +6,24 @@ let fetchBtn = document.getElementById("fetch-btn");
 
 let elementToBePopulated = document.createElement('p');
 
+let ourData =new XMLHttpRequest();
+ourData.open('GET','https://learnwebcode.github.io/json-example/animals-1.json',true)
+
+ourData.onload(()=>{
+    console.log(ourData.responseText);
+})
+
+
+
+
+
+
+
+
+
+
+
+
 // fetchBtn.addEventListener("click", buttonClickHandler);
 
 // function buttonClickHandler() {
@@ -57,46 +75,54 @@ let elementToBePopulated = document.createElement('p');
 //   xhr.send();
 // }
 
-let counter = 0
+// let counter = 0
 
-fetchBtn.addEventListener('click',populateData)
+// fetchBtn.addEventListener('click',populateData)
 
-function populateData() {
-    counter++;
-    if(counter<=3){
-        let ourRequest = new XMLHttpRequest();
-        ourRequest.open('GET',`https://learnwebcode.github.io/json-example/animals-${counter}.json`,true)
+// function populateData() {
+//     counter++;
+//     if(counter<=3){
+//         let ourRequest = new XMLHttpRequest();
+//         ourRequest.open('GET',`https://learnwebcode.github.io/json-example/animals-${counter}.json`,true)
     
-        ourRequest.onload = function(){
-            let ourData = JSON.parse(ourRequest.responseText);
-            // let ourData = ourRequest.responseText;
-            // console.log(ourData);
+//         ourRequest.onload = function(){
+//             let ourData = JSON.parse(ourRequest.responseText);
+//             // let ourData = ourRequest.responseText;
+//             // console.log(ourData);
     
-            renderHTML(ourData);
+//             renderHTML(ourData);
         
-        }
+//         }
         
-        ourRequest.send();
-    }
-    else{
-        fetchBtn.disabled = true;
-    }
+//         ourRequest.send();
+//     }
+//     else{
+//         fetchBtn.disabled = true;
+//     }
     
-}
+// }
 
 
-function renderHTML(data) {
+// function renderHTML(data) {
 
-    let htmlString = ""
+//     let htmlString = "" ; 
 
-    for (let i = 0; i < data.length; i++) {
-        htmlString+="<p>" + data[i].name + "is a " + data[i].species + ".</p>"
-    }
+//     for (let i = 0; i < data.length; i++) {
+//         htmlString+="<p>" + data[i].name + "is a " + data[i].species + ".</p>"
+//     }
 
-    elementToBePopulated.insertAdjacentHTML('beforeend',htmlString)
+//     elementToBePopulated.insertAdjacentHTML('beforeend',htmlString)
     
 
 
 
-    document.body.appendChild(elementToBePopulated)
-}
+//     document.body.appendChild(elementToBePopulated)
+// }
+
+
+
+
+
+
+
+
