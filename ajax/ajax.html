@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern-Button</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #wrapper {
+            height: 100vh;
+            background-color: rgba(15, 15, 15, 0.37);
+            overflow-x: hidden;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 5rem;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /*
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }*/
+
+        .btn {
+            cursor: pointer;
+            padding: 0.5rem 1.5rem;
+            border: none;
+            text-align: center;
+            color: white;
+            /*background-color: rgba(255, 0, 0, .719);*/
+            /* width: fit-content; */
+            background-color: #e84949;
+
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.507);
+
+            /*background: linear-gradient(to right, black 50%, #e84949 50%);
+            background-size: 200% 100%;
+            background-position: right bottom;
+            transition: all .5s linear;*/
+            position: relative;
+            z-index: 1;
+        }
+        .btn:hover{
+            background-position:left bottom;
+        }
+        .btn::before{
+            content: "";
+            position: absolute;
+            transform: scaleX(0);
+            background-color: black;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+           height: 100%;
+           transition: all;
+           transition-duration: 0.5s;
+           transform-origin: left;
+           z-index: -1;
+        }
+        
+        .btn:hover::before{
+            transform: scaleX(1);
+        } 
+/*
+        #btn::before {
+            content: "";
+            background-color: black;
+            position: absolute;
+            transform: scaleX(0);
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            transition: all 0.5s linear;
+            transform-origin: left;
+            z-index: -1;
+        }
+
+        #btn:hover::before {
+            transform: scaleX(1);
+        }
+*/
+        
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <h1>Learning AJAX</h1>
+        <!-- <div class="button-container"> -->
+        <button class="btn" id="fetch-btn">Hire me</button>
+        
+        <button class="btn" id="Backup-btn">Another Button</button>
+
+        <div class="loader"></div>
+        <!-- </div> -->
+    </div>
+    <script src="./ajax.js"></script>
+</body>
+
+</html>
