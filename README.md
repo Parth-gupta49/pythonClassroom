@@ -1,2 +1,1 @@
-# pythonClassroom
-python files for the classrooom
+# python files for the classroom
